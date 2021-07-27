@@ -103,3 +103,7 @@ label {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }
+.position {
+  display: flex;
+  flex-direction: row;
+}

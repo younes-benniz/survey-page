@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header id="headline">
+          <h1 id="title">Developer survey</h1>
+          <p id="description">Thanks for taking our survey</p>
+        </header>
+        <form id="survey-form" action="/results" method="POST">
+          <label for="name" id="name-label">Name:</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Enter your Name" required>
+          
+          <label for="email" id="email-label">Email:</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="Enter Your Email" required>
+          
+          <label for="number" id="number-label">Age:</label>
+          <input type="number" id="number" name="age" class="form-input" min="18" max="65" placeholder="Choose your age ...">
+          
+          <label for="dropdown">Sex</label>
+          <select id="dropdown" name="sex" class="form-input" required>
+            <option disabled selected value>Select your sex</option>
+            <option>Man</option>
+            <option>Women</option>
+            <option>Other</option>
+            
+          </select>
+          
+          <p>Do you love programming?</p>
+          <div class="radio-box">  
+            <label><input type="radio" name="Do you love programming" class="input-radio" value="yes" checked>Yes</label>
+            <label><input type="radio" name="Do you love programming" class="input-radio" value="no">No</label>
+            <label><input type="radio" name="Do you love programming" class="input-radio" value="not-sure">Not sure</label>
+          </div>
+          <p>What is your desired position?</p>
+          <div class="position">
+            <input type="checkbox" class="input-checkbox" name="front-end" value="checked">
+            <label for="front-end">Front End developer</label>
+           </div> 
+           <div class="position">
+             <input type="checkbox" class="input-checkbox" name="back-end" value="checked">
+             <label for="back-end">Back End developer</label>
+           </div>
+           <div class="position">
+             <input type="checkbox" class="input-checkbox" name="server-side" value="checked">
+             <label for="server-side">server side developer</label>
+           </div>
+           <div class="position">
+             <input type="checkbox" class="input-checkbox" name="software-engineer" value="checked">
+             <label for="software-engineer">Software engineerr</label>
+           </div>
+           <div class="position">
+             <input type="checkbox" class="input-checkbox" name="android-dev" value="checked">
+             <label for="android-dev">Android developer</label>
+           </div>
+           <div class="position">
+             <input type="checkbox" class="input-checkbox" name="other" value="checked">
+             <label for="other">Other</label>
+           </div> 
+          <p>Comments or suggestions?</p>
+            <textarea id="comments" name="comment" placeholder="Enter your comment here..."></textarea>
+            <button type="submit" id="submit" class="button">Submit</button>
+        </form>
+      </div>
+      
+</body>
+</html>
